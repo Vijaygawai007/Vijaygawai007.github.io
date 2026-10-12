@@ -1,79 +1,531 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vijay Gawai — iOS Developer Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+                    },
+                    colors: {
+                        apple: {
+                            blue: '#0071E3',
+                            darkbg: '#000000',
+                            carddark: '#1c1c1e',
+                            cardlight: '#ffffff',
+                            borderdark: '#38383a',
+                            borderlight: '#e5e5ea'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .glass-dark {
+            background: rgba(28, 28, 30, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-light {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+        }
+        .glow-effect {
+            box-shadow: 0 0 50px -10px rgba(0, 113, 227, 0.25);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(150, 150, 150, 0.3);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(150, 150, 150, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-[#fbfbfd] dark:bg-[#000000] text-[#1d1d1f] dark:text-[#f5f5f7] font-sans transition-colors duration-300 antialiased selection:bg-blue-500 selection:text-white">
 
-<!-- ShopingApp Screenshots -->
-<section id="shopingapp-gallery" class="section">
-    <div class="section-heading">
-        <h2>ShopingApp Screenshots</h2>
-        <p>
-            Explore the user interface of my native iOS shopping
-            application, built using Swift and UIKit.
-        </p>
-    </div>
+    <!-- Sticky Navigation Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <nav id="navbar" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between glass-light dark:glass-dark my-3 rounded-2xl mx-4 sm:mx-auto shadow-sm">
+            <div class="flex items-center space-x-3">
+                <a href="#hero" class="flex items-center space-x-2 group">
+                    <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center text-white font-bold text-lg shadow-md group-hover:scale-105 transition-transform">
+                        VG
+                    </div>
+                    <span class="font-semibold text-lg tracking-tight">Vijay Gawai</span>
+                </a>
+            </div>
 
-    <div class="app-screenshots">
+            <!-- Desktop Nav Links -->
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="#about" class="hover:text-blue-500 transition-colors">About</a>
+                <a href="#projects" class="hover:text-blue-500 transition-colors">Projects</a>
+                <a href="#skills" class="hover:text-blue-500 transition-colors">Skills</a>
+                <a href="#contact" class="hover:text-blue-500 transition-colors">Contact</a>
+            </div>
 
-        <a href="assets/images/shopingapp/onboarding-1.png"
-           target="_blank" rel="noopener">
-            <img src="assets/images/shopingapp/onboarding-1.png"
-                 alt="ShopingApp onboarding screen 1"
-                 loading="lazy">
-            <h3>Onboarding — Welcome</h3>
-        </a>
+            <div class="flex items-center space-x-4">
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle" class="p-2 rounded-xl bg-gray-200 dark:bg-[#2c2c2e] hover:bg-gray-300 dark:hover:bg-[#3a3a3c] transition-colors focus:outline-none" aria-label="Toggle theme">
+                    <i class="fa-solid fa-moon dark:hidden text-gray-700"></i>
+                    <i class="fa-solid fa-sun hidden dark:block text-yellow-400"></i>
+                </button>
+                
+                <!-- Quick Resume / Github -->
+                <a href="https://github.com" target="_blank" class="hidden sm:inline-flex items-center space-x-2 px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium transition-all shadow-sm hover:shadow-blue-500/25">
+                    <i class="fa-brands fa-github"></i>
+                    <span>GitHub</span>
+                </a>
 
-        <a href="assets/images/shopingapp/onboarding-2.png"
-           target="_blank" rel="noopener">
-            <img src="assets/images/shopingapp/onboarding-2.png"
-                 alt="ShopingApp onboarding screen 2"
-                 loading="lazy">
-            <h3>Onboarding — Delivery</h3>
-        </a>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-xl bg-gray-200 dark:bg-[#2c2c2e] text-gray-700 dark:text-gray-300">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </nav>
 
-        <a href="assets/images/shopingapp/onboarding-3.png"
-           target="_blank" rel="noopener">
-            <img src="assets/images/shopingapp/onboarding-3.png"
-                 alt="ShopingApp onboarding screen 3"
-                 loading="lazy">
-            <h3>Onboarding — Secure Shopping</h3>
-        </a>
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-4 glass-light dark:glass-dark mx-4 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-800">
+            <div class="flex flex-col space-y-3 text-base font-medium">
+                <a href="#about" class="mobile-link px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">About</a>
+                <a href="#projects" class="mobile-link px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">Projects</a>
+                <a href="#skills" class="mobile-link px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">Skills</a>
+                <a href="#contact" class="mobile-link px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">Contact</a>
+                <a href="https://github.com" target="_blank" class="flex items-center space-x-2 px-3 py-2 rounded-lg bg-blue-600 text-white justify-center">
+                    <i class="fa-brands fa-github"></i>
+                    <span>GitHub Profile</span>
+                </a>
+            </div>
+        </div>
+    </header>
 
-        <a href="assets/images/shopingapp/login.png"
-           target="_blank" rel="noopener">
-            <img src="assets/images/shopingapp/login.png"
-                 alt="ShopingApp login screen"
-                 loading="lazy">
-            <h3>Login</h3>
-        </a>
+    <main class="overflow-hidden pt-24">
+        <!-- Hero Section -->
+        <section id="hero" class="relative min-h-[90vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20">
+            <!-- Background Glow Elements -->
+            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] sm:w-[600px] h-[350px] sm:h-[600px] bg-blue-500/15 dark:bg-blue-600/20 rounded-full blur-[120px] pointer-events-none"></div>
+            
+            <div class="max-w-4xl mx-auto text-center relative z-10">
+                <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 text-sm font-semibold mb-6 border border-blue-500/20 animate-bounce">
+                    <i class="fa-solid fa-code text-xs"></i>
+                    <span>iOS & Mobile App Engineer</span>
+                </div>
+                
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-[1.1]">
+                    Crafting Native <span class="bg-gradient-to-r from-blue-600 via-indigo-500 to-cyan-400 bg-clip-text text-transparent">iOS Experiences</span> with Precision.
+                </h1>
+                
+                <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+                    Hi, I'm <strong class="text-gray-900 dark:text-white font-semibold">Vijay Gawai</strong>. I specialize in building high-performance, robust, and fluid native iOS applications using Swift, SwiftUI, UIKit, and modern scalable architectures.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="#projects" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow-lg shadow-blue-600/30 hover:scale-105 transition-all text-center">
+                        <i class="fa-solid fa-layer-group mr-2"></i> View Projects
+                    </a>
+                    <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gray-200 dark:bg-[#2c2c2e] hover:bg-gray-300 dark:hover:bg-[#3a3a3c] font-semibold transition-all text-center">
+                        <i class="fa-regular fa-envelope mr-2"></i> Contact Me
+                    </a>
+                </div>
 
-        <a href="assets/images/shopingapp/home.png"
-           target="_blank" rel="noopener">
-            <img src="assets/images/shopingapp/home.png"
-                 alt="ShopingApp home screen with product categories"
-                 loading="lazy">
-            <h3>Home & Products</h3>
-        </a>
+                <!-- Quick Tech Pill Badges -->
+                <div class="mt-14 flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm font-medium text-gray-500 dark:text-gray-400">
+                    <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-800">Swift 6</span>
+                    <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-800">SwiftUI</span>
+                    <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-800">UIKit & CollectionViews</span>
+                    <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-800">MVVM / Clean Architecture</span>
+                    <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-800">SQLite & Alamofire</span>
+                </div>
+            </div>
+        </section>
 
-        <a href="assets/images/shopingapp/product-details.png"
-           target="_blank" rel="noopener">
-            <img src="assets/images/shopingapp/product-details.png"
-                 alt="ShopingApp product details screen"
-                 loading="lazy">
-            <h3>Product Details</h3>
-        </a>
+        <!-- About Me Section -->
+        <section id="about" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-3">About Me</h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-xl mx-auto">Passionate about clean code, silky-smooth 60fps animations, and delightful user interactions.</p>
+            </div>
 
-        <a href="assets/images/shopingapp/cart.png"
-           target="_blank" rel="noopener">
-            <img src="assets/images/shopingapp/cart.png"
-                 alt="ShopingApp shopping cart screen"
-                 loading="lazy">
-            <h3>Shopping Cart</h3>
-        </a>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="p-8 rounded-3xl bg-white dark:bg-[#1c1c1e] border border-gray-200 dark:border-[#38383a] shadow-sm hover:shadow-xl transition-all group">
+                    <div class="w-14 h-14 rounded-2xl bg-blue-500/10 flex items-center justify-center text-blue-600 dark:text-blue-400 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Native iOS Expertise</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                        Deep proficiency in Swift, SwiftUI, and UIKit. Building robust custom UICollectionViews, reactive data flows, and fluid gesture-driven interfaces.
+                    </p>
+                </div>
 
-        <a href="assets/images/shopingapp/orders.png"
-           target="_blank" rel="noopener">
-            <img src="assets/images/shopingapp/orders.png"
-                 alt="ShopingApp order history screen"
-                 loading="lazy">
-            <h3>My Orders</h3>
-        </a>
+                <!-- Card 2 -->
+                <div class="p-8 rounded-3xl bg-white dark:bg-[#1c1c1e] border border-gray-200 dark:border-[#38383a] shadow-sm hover:shadow-xl transition-all group">
+                    <div class="w-14 h-14 rounded-2xl bg-indigo-500/10 flex items-center justify-center text-indigo-600 dark:text-indigo-400 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-cubes"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Modern Architecture</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                        Designing modular, testable codebases using MVVM, Clean Architecture, and VIPER patterns. Separation of concerns for long-term maintainability.
+                    </p>
+                </div>
 
-    </div>
-</section>
+                <!-- Card 3 -->
+                <div class="p-8 rounded-3xl bg-white dark:bg-[#1c1c1e] border border-gray-200 dark:border-[#38383a] shadow-sm hover:shadow-xl transition-all group">
+                    <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 flex items-center justify-center text-cyan-600 dark:text-cyan-400 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Performance & Polish</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                        Optimizing memory management, network caching with Alamofire & Kingfisher, and local persistence with SQLite & Core Data for lightning-fast experiences.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Projects Section -->
+        <section id="projects" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-3">Featured Projects</h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-xl mx-auto">Explore my core mobile applications engineered with high standards of architecture and design.</p>
+            </div>
+
+            <div class="space-y-20">
+                <!-- Project 1: ShopingApp -->
+                <div class="bg-white dark:bg-[#1c1c1e] border border-gray-200 dark:border-[#38383a] rounded-3xl p-6 sm:p-10 shadow-lg">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-6 space-y-6">
+                            <div class="flex items-center space-x-3">
+                                <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 text-xs font-semibold">Featured iOS App</span>
+                                <span class="text-xs text-gray-500"><i class="fa-brands fa-github mr-1"></i> ShopingApp Repository</span>
+                            </div>
+                            
+                            <h3 class="text-2xl sm:text-3xl font-extrabold">ShopingApp E-Commerce Ecosystem</h3>
+                            
+                            <p class="text-gray-600 dark:text-gray-400 text-sm sm:text-base leading-relaxed">
+                                A high-performance native iOS e-commerce application crafted with precision. Features robust local persistence via SQLite, RESTful API integration using Alamofire, high-speed asynchronous image caching with Kingfisher, and tailored custom UICollectionViews for seamless product grids. Includes interactive cart quantity stepper controls and smooth checkout flows.
+                            </p>
+
+                            <!-- Tech Stack Badges -->
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-900 text-xs rounded-xl font-medium border border-gray-200 dark:border-gray-800">Swift</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-900 text-xs rounded-xl font-medium border border-gray-200 dark:border-gray-800">UIKit / UICollectionView</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-900 text-xs rounded-xl font-medium border border-gray-200 dark:border-gray-800">SQLite</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-900 text-xs rounded-xl font-medium border border-gray-200 dark:border-gray-800">Alamofire</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-900 text-xs rounded-xl font-medium border border-gray-200 dark:border-gray-800">Kingfisher</span>
+                            </div>
+
+                            <!-- Interactive Live Demo / Cart Stepper Preview Widget -->
+                            <div class="p-4 rounded-2xl bg-gray-50 dark:bg-[#252528] border border-gray-200 dark:border-gray-800">
+                                <div class="text-xs font-semibold text-gray-500 dark:text-gray-400 mb-2 uppercase tracking-wider">Interactive Cart Stepper Demo</div>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-10 h-10 rounded-xl bg-blue-600/20 flex items-center justify-center text-blue-500 font-bold">
+                                            <i class="fa-solid fa-bag-shopping"></i>
+                                        </div>
+                                        <div>
+                                            <div class="font-semibold text-sm">Wireless Headphones Pro</div>
+                                            <div class="text-xs text-blue-500 font-medium">$149.00</div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center space-x-3 bg-white dark:bg-[#1c1c1e] px-3 py-1.5 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm">
+                                        <button onclick="decrementQty()" class="w-6 h-6 rounded-lg bg-gray-100 dark:bg-gray-800 flex items-center justify-center hover:bg-gray-200 transition-colors text-xs font-bold">-</button>
+                                        <span id="qty-display" class="w-6 text-center font-bold text-sm">1</span>
+                                        <button onclick="incrementQty()" class="w-6 h-6 rounded-lg bg-gray-100 dark:bg-gray-800 flex items-center justify-center hover:bg-gray-200 transition-colors text-xs font-bold">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Screenshot Showcase Grid -->
+                        <div class="lg:col-span-6 space-y-4">
+                            <div class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">App Screenshot Showcase (GitHub Assets)</div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="relative group overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-800 shadow-md bg-gray-100 dark:bg-gray-900 aspect-[9/16] flex items-center justify-center">
+                                    <img src="https://placehold.co/400x710/111827/3b82f6?text=ShopingApp+Home" alt="ShopingApp Home" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/400x710/1a1a1a/ffffff?text=ShopingApp'">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                                        <span class="text-xs text-white font-medium">Product Catalog Grid</span>
+                                    </div>
+                                </div>
+                                <div class="relative group overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-800 shadow-md bg-gray-100 dark:bg-gray-900 aspect-[9/16] flex items-center justify-center">
+                                    <img src="https://placehold.co/400x710/1f2937/60a5fa?text=ShopingApp+Cart" alt="ShopingApp Cart" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/400x710/1a1a1a/ffffff?text=Cart+View'">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                                        <span class="text-xs text-white font-medium">Cart & Stepper Flow</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: ConnectCall -->
+                <div class="bg-white dark:bg-[#1c1c1e] border border-gray-200 dark:border-[#38383a] rounded-3xl p-6 sm:p-10 shadow-lg">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-6 space-y-6">
+                            <div class="flex items-center space-x-3">
+                                <span class="px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 text-xs font-semibold">Cross-Platform / Real-time</span>
+                                <span class="text-xs text-gray-500"><i class="fa-brands fa-github mr-1"></i> ConnectCall Repository</span>
+                            </div>
+                            
+                            <h3 class="text-2xl sm:text-3xl font-extrabold">ConnectCall Real-time Calling App</h3>
+                            
+                            <p class="text-gray-600 dark:text-gray-400 text-sm sm:text-base leading-relaxed">
+                                A high-availability 1-to-1 video and audio calling application built with Flutter and Supabase backend services. Features low-latency WebRTC streams, secure real-time authentication, push notifications, and crystal-clear audio-video quality synchronization across mobile platforms.
+                            </p>
+
+                            <!-- Tech Stack Badges -->
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-900 text-xs rounded-xl font-medium border border-gray-200 dark:border-gray-800">Flutter / Dart</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-900 text-xs rounded-xl font-medium border border-gray-200 dark:border-gray-800">Supabase</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-900 text-xs rounded-xl font-medium border border-gray-200 dark:border-gray-800">WebRTC</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-900 text-xs rounded-xl font-medium border border-gray-200 dark:border-gray-800">Real-time DB</span>
+                            </div>
+
+                            <div class="pt-2">
+                                <a href="https://github.com" target="_blank" class="inline-flex items-center space-x-2 text-sm font-semibold text-blue-600 dark:text-blue-400 hover:underline">
+                                    <span>Explore source code on GitHub</span>
+                                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Screenshot Showcase Grid -->
+                        <div class="lg:col-span-6 space-y-4">
+                            <div class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">App Screenshot Showcase (GitHub Assets)</div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="relative group overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-800 shadow-md bg-gray-100 dark:bg-gray-900 aspect-[9/16] flex items-center justify-center">
+                                    <img src="https://placehold.co/400x710/1e1b4b/818cf8?text=ConnectCall+UI" alt="ConnectCall Interface" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/400x710/1a1a1a/ffffff?text=ConnectCall+App'">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                                        <span class="text-xs text-white font-medium">Contact & Call UI</span>
+                                    </div>
+                                </div>
+                                <div class="relative group overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-800 shadow-md bg-gray-100 dark:bg-gray-900 aspect-[9/16] flex items-center justify-center">
+                                    <img src="https://placehold.co/400x710/311042/c084fc?text=Video+Stream" alt="Video Stream" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/400x710/1a1a1a/ffffff?text=Video+Call'">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                                        <span class="text-xs text-white font-medium">1-to-1 WebRTC Video</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Skills Matrix Section -->
+        <section id="skills" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-gray-50/50 dark:bg-[#121214] rounded-3xl border border-gray-200/60 dark:border-[#222225] my-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-3">Technical Skills Matrix</h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-xl mx-auto">Languages, frameworks, architecture patterns, and developer tools in my toolkit.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Languages -->
+                <div class="p-6 rounded-2xl bg-white dark:bg-[#1c1c1e] border border-gray-200 dark:border-[#38383a] shadow-sm">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-orange-500/10 text-orange-500 flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <h3 class="font-bold text-lg">Languages</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-xl bg-gray-100 dark:bg-gray-900 text-sm font-medium border border-gray-200 dark:border-gray-800">Swift 6</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-gray-100 dark:bg-gray-900 text-sm font-medium border border-gray-200 dark:border-gray-800">Dart</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-gray-100 dark:bg-gray-900 text-sm font-medium border border-gray-200 dark:border-gray-800">Objective-C</span>
+                    </div>
+                </div>
+
+                <!-- Frameworks -->
+                <div class="p-6 rounded-2xl bg-white dark:bg-[#1c1c1e] border border-gray-200 dark:border-[#38383a] shadow-sm">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-500 flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-layer-group"></i>
+                        </div>
+                        <h3 class="font-bold text-lg">Frameworks</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-xl bg-gray-100 dark:bg-gray-900 text-sm font-medium border border-gray-200 dark:border-gray-800">SwiftUI</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-gray-100 dark:bg-gray-900 text-sm font-medium border border-gray-200 dark:border-gray-800">UIKit</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-gray-100 dark:bg-gray-900 text-sm font-medium border border-gray-200 dark:border-gray-800">Alamofire</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-gray-100 dark:bg-gray-900 text-sm font-medium border border-gray-200 dark:border-gray-800">Kingfisher</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-gray-100 dark:bg-gray-900 text-sm font-medium border border-gray-200 dark:border-gray-800">Core Data / SQLite</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-gray-100 dark:bg-gray-900 text-sm font-medium border border-gray-200 dark:border-gray-800">Supabase</span>
+                    </div>
+                </div>
+
+                <!-- Architecture -->
+                <div class="p-6 rounded-2xl bg-white dark:bg-[#1c1c1e] border border-gray-200 dark:border-[#38383a] shadow-sm">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-500 flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-sitemap"></i>
+                        </div>
+                        <h3 class="font-bold text-lg">Architecture</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-xl bg-gray-100 dark:bg-gray-900 text-sm font-medium border border-gray-200 dark:border-gray-800">MVVM</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-gray-100 dark:bg-gray-900 text-sm font-medium border border-gray-200 dark:border-gray-800">Clean Architecture</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-gray-100 dark:bg-gray-900 text-sm font-medium border border-gray-200 dark:border-gray-800">VIPER</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-gray-100 dark:bg-gray-900 text-sm font-medium border border-gray-200 dark:border-gray-800">Combine / Async/Await</span>
+                    </div>
+                </div>
+
+                <!-- Tools & Ecosystem -->
+                <div class="p-6 rounded-2xl bg-white dark:bg-[#1c1c1e] border border-gray-200 dark:border-[#38383a] shadow-sm">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-green-500/10 text-green-500 flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                        </div>
+                        <h3 class="font-bold text-lg">Tools & Ecosystem</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-xl bg-gray-100 dark:bg-gray-900 text-sm font-medium border border-gray-200 dark:border-gray-800">Xcode</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-gray-100 dark:bg-gray-900 text-sm font-medium border border-gray-200 dark:border-gray-800">Git / GitHub</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-gray-100 dark:bg-gray-900 text-sm font-medium border border-gray-200 dark:border-gray-800">Swift Package Manager</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-gray-100 dark:bg-gray-900 text-sm font-medium border border-gray-200 dark:border-gray-800">CocoaPods</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact & Footer Section -->
+        <section id="contact" class="py-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-3">Let's Build Together</h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-xl mx-auto">Have an iOS project in mind or want to collaborate? Drop me a message below.</p>
+            </div>
+
+            <div class="bg-white dark:bg-[#1c1c1e] border border-gray-200 dark:border-[#38383a] rounded-3xl p-8 sm:p-12 shadow-lg relative">
+                <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">Your Name</label>
+                            <input type="text" required class="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-[#2c2c2e] border border-gray-200 dark:border-gray-700 focus:outline-none focus:border-blue-500 transition-colors text-sm" placeholder="John Appleseed">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">Email Address</label>
+                            <input type="email" required class="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-[#2c2c2e] border border-gray-200 dark:border-gray-700 focus:outline-none focus:border-blue-500 transition-colors text-sm" placeholder="john@example.com">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">Message</label>
+                        <textarea rows="5" required class="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-[#2c2c2e] border border-gray-200 dark:border-gray-700 focus:outline-none focus:border-blue-500 transition-colors text-sm" placeholder="Tell me about your project..."></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow-lg shadow-blue-600/25 transition-all">
+                        Send Message
+                    </button>
+                </form>
+
+                <!-- Success Message Modal / Notice -->
+                <div id="success-box" class="hidden mt-6 p-4 rounded-2xl bg-green-500/10 border border-green-500/20 text-green-600 dark:text-green-400 text-center text-sm font-medium">
+                    Thank you! Your message has been sent successfully. Vijay will get back to you shortly.
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-200 dark:border-gray-800 py-12 px-4 sm:px-6 lg:px-8 mt-20">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center text-white font-bold text-sm">
+                    VG
+                </div>
+                <span class="font-semibold text-sm">Vijay Gawai &copy; 2026. All rights reserved.</span>
+            </div>
+
+            <div class="flex items-center space-x-6 text-xl text-gray-600 dark:text-gray-400">
+                <a href="https://github.com" target="_blank" class="hover:text-blue-500 transition-colors" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://linkedin.com" target="_blank" class="hover:text-blue-500 transition-colors" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="mailto:vijay.gawai@example.com" class="hover:text-blue-500 transition-colors" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle Script
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+
+        themeToggleBtn.addEventListener('click', () => {
+            if (htmlElement.classList.contains('dark')) {
+                htmlElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                htmlElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
+        // Load saved theme or default to dark
+        if (localStorage.getItem('theme') === 'light') {
+            htmlElement.classList.remove('dark');
+        } else {
+            htmlElement.classList.add('dark');
+        }
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Cart Stepper Demo Logic for ShopingApp
+        let cartQty = 1;
+        const qtyDisplay = document.getElementById('qty-display');
+
+        function incrementQty() {
+            cartQty++;
+            qtyDisplay.textContent = cartQty;
+        }
+
+        function decrementQty() {
+            if (cartQty > 1) {
+                cartQty--;
+                qtyDisplay.textContent = cartQty;
+            }
+        }
+
+        // Contact Form Submission Handler
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const successBox = document.getElementById('success-box');
+            const form = document.getElementById('contact-form');
+            successBox.classList.remove('hidden');
+            form.reset();
+            setTimeout(() => {
+                successBox.classList.add('hidden');
+            }, 6000);
+        }
+    </script>
+</body>
+</html>
