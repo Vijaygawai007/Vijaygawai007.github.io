@@ -45,10 +45,6 @@
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(0, 0, 0, 0.08);
         }
-        .glow-effect {
-            box-shadow: 0 0 50px -10px rgba(0, 113, 227, 0.25);
-        }
-        /* Custom scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -66,7 +62,6 @@
 </head>
 <body class="bg-[#fbfbfd] dark:bg-[#000000] text-[#1d1d1f] dark:text-[#f5f5f7] font-sans transition-colors duration-300 antialiased selection:bg-blue-500 selection:text-white">
 
-    <!-- Sticky Navigation Header -->
     <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
         <nav id="navbar" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between glass-light dark:glass-dark my-3 rounded-2xl mx-4 sm:mx-auto shadow-sm">
             <div class="flex items-center space-x-3">
@@ -78,53 +73,48 @@
                 </a>
             </div>
 
-            <!-- Desktop Nav Links -->
             <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
                 <a href="#about" class="hover:text-blue-500 transition-colors">About</a>
                 <a href="#projects" class="hover:text-blue-500 transition-colors">Projects</a>
+                <a href="#gallery" class="hover:text-blue-500 transition-colors">App Gallery</a>
                 <a href="#skills" class="hover:text-blue-500 transition-colors">Skills</a>
                 <a href="#contact" class="hover:text-blue-500 transition-colors">Contact</a>
             </div>
 
             <div class="flex items-center space-x-4">
-                <!-- Theme Toggle Button -->
                 <button id="theme-toggle" class="p-2 rounded-xl bg-gray-200 dark:bg-[#2c2c2e] hover:bg-gray-300 dark:hover:bg-[#3a3a3c] transition-colors focus:outline-none" aria-label="Toggle theme">
                     <i class="fa-solid fa-moon dark:hidden text-gray-700"></i>
                     <i class="fa-solid fa-sun hidden dark:block text-yellow-400"></i>
                 </button>
                 
-                <!-- Quick Resume / Github -->
-                <a href="https://github.com" target="_blank" class="hidden sm:inline-flex items-center space-x-2 px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium transition-all shadow-sm hover:shadow-blue-500/25">
+                <a href="https://github.com/Vijaygawai007/Vijaygawai007.github.io" target="_blank" class="hidden sm:inline-flex items-center space-x-2 px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium transition-all shadow-sm hover:shadow-blue-500/25">
                     <i class="fa-brands fa-github"></i>
                     <span>GitHub</span>
                 </a>
 
-                <!-- Mobile Menu Button -->
                 <button id="mobile-menu-btn" class="md:hidden p-2 rounded-xl bg-gray-200 dark:bg-[#2c2c2e] text-gray-700 dark:text-gray-300">
                     <i class="fa-solid fa-bars"></i>
                 </button>
             </div>
         </nav>
 
-        <!-- Mobile Navigation Menu -->
         <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-4 glass-light dark:glass-dark mx-4 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-800">
             <div class="flex flex-col space-y-3 text-base font-medium">
                 <a href="#about" class="mobile-link px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">About</a>
                 <a href="#projects" class="mobile-link px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">Projects</a>
+                <a href="#gallery" class="mobile-link px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">App Gallery</a>
                 <a href="#skills" class="mobile-link px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">Skills</a>
                 <a href="#contact" class="mobile-link px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">Contact</a>
-                <a href="https://github.com" target="_blank" class="flex items-center space-x-2 px-3 py-2 rounded-lg bg-blue-600 text-white justify-center">
+                <a href="https://github.com/Vijaygawai007/Vijaygawai007.github.io" target="_blank" class="flex items-center space-x-2 px-3 py-2 rounded-lg bg-blue-600 text-white justify-center">
                     <i class="fa-brands fa-github"></i>
-                    <span>GitHub Profile</span>
+                    <span>GitHub Repository</span>
                 </a>
             </div>
         </div>
     </header>
 
     <main class="overflow-hidden pt-24">
-        <!-- Hero Section -->
         <section id="hero" class="relative min-h-[90vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20">
-            <!-- Background Glow Elements -->
             <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] sm:w-[600px] h-[350px] sm:h-[600px] bg-blue-500/15 dark:bg-blue-600/20 rounded-full blur-[120px] pointer-events-none"></div>
             
             <div class="max-w-4xl mx-auto text-center relative z-10">
@@ -138,38 +128,35 @@
                 </h1>
                 
                 <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-                    Hi, I'm <strong class="text-gray-900 dark:text-white font-semibold">Vijay Gawai</strong>. I specialize in building high-performance, robust, and fluid native iOS applications using Swift, SwiftUI, UIKit, and modern scalable architectures.
+                    Hi, I'm <strong class="text-gray-900 dark:text-white font-semibold">Vijay Gawai</strong>. I specialize in building high-performance, robust, and fluid native iOS applications using Swift, SwiftUI, UIKit, SQLite, and modern scalable architectures.
                 </p>
                 
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <a href="#projects" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow-lg shadow-blue-600/30 hover:scale-105 transition-all text-center">
-                        <i class="fa-solid fa-layer-group mr-2"></i> View Projects
+                    <a href="#gallery" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow-lg shadow-blue-600/30 hover:scale-105 transition-all text-center">
+                        <i class="fa-solid fa-images mr-2"></i> View ShopingApp Screens
                     </a>
                     <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gray-200 dark:bg-[#2c2c2e] hover:bg-gray-300 dark:hover:bg-[#3a3a3c] font-semibold transition-all text-center">
                         <i class="fa-regular fa-envelope mr-2"></i> Contact Me
                     </a>
                 </div>
 
-                <!-- Quick Tech Pill Badges -->
                 <div class="mt-14 flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm font-medium text-gray-500 dark:text-gray-400">
                     <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-800">Swift 6</span>
-                    <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-800">SwiftUI</span>
-                    <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-800">UIKit & CollectionViews</span>
-                    <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-800">MVVM / Clean Architecture</span>
-                    <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-800">SQLite & Alamofire</span>
+                    <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-800">SwiftUI & UIKit</span>
+                    <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-800">SQLite & Core Data</span>
+                    <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-800">Alamofire & Kingfisher</span>
+                    <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-800">MVVM / Git</span>
                 </div>
             </div>
         </section>
 
-        <!-- About Me Section -->
         <section id="about" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
             <div class="text-center mb-16">
                 <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-3">About Me</h2>
-                <p class="text-gray-600 dark:text-gray-400 max-w-xl mx-auto">Passionate about clean code, silky-smooth 60fps animations, and delightful user interactions.</p>
+                <p class="text-gray-600 dark:text-gray-400 max-w-xl mx-auto">Passionate about clean code, silky-smooth 60fps animations, and delightful user experiences.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
                 <div class="p-8 rounded-3xl bg-white dark:bg-[#1c1c1e] border border-gray-200 dark:border-[#38383a] shadow-sm hover:shadow-xl transition-all group">
                     <div class="w-14 h-14 rounded-2xl bg-blue-500/10 flex items-center justify-center text-blue-600 dark:text-blue-400 text-2xl mb-6 group-hover:scale-110 transition-transform">
                         <i class="fa-solid fa-mobile-screen-button"></i>
@@ -180,31 +167,28 @@
                     </p>
                 </div>
 
-                <!-- Card 2 -->
                 <div class="p-8 rounded-3xl bg-white dark:bg-[#1c1c1e] border border-gray-200 dark:border-[#38383a] shadow-sm hover:shadow-xl transition-all group">
                     <div class="w-14 h-14 rounded-2xl bg-indigo-500/10 flex items-center justify-center text-indigo-600 dark:text-indigo-400 text-2xl mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-cubes"></i>
+                        <i class="fa-solid fa-database"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Modern Architecture</h3>
+                    <h3 class="text-xl font-bold mb-3">Persistence & Networking</h3>
                     <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
-                        Designing modular, testable codebases using MVVM, Clean Architecture, and VIPER patterns. Separation of concerns for long-term maintainability.
+                        Implementing robust local storage using SQLite and Core Data, alongside high-performance networking with Alamofire and Kingfisher image caching.
                     </p>
                 </div>
 
-                <!-- Card 3 -->
                 <div class="p-8 rounded-3xl bg-white dark:bg-[#1c1c1e] border border-gray-200 dark:border-[#38383a] shadow-sm hover:shadow-xl transition-all group">
                     <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 flex items-center justify-center text-cyan-600 dark:text-cyan-400 text-2xl mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-bolt"></i>
+                        <i class="fa-solid fa-sitemap"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Performance & Polish</h3>
+                    <h3 class="text-xl font-bold mb-3">MVVM Architecture</h3>
                     <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
-                        Optimizing memory management, network caching with Alamofire & Kingfisher, and local persistence with SQLite & Core Data for lightning-fast experiences.
+                        Designing modular, testable codebases using MVVM and Clean Architecture patterns for maintainability and scalability across enterprise apps.
                     </p>
                 </div>
             </div>
         </section>
 
-        <!-- Featured Projects Section -->
         <section id="projects" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
             <div class="text-center mb-16">
                 <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-3">Featured Projects</h2>
@@ -212,119 +196,78 @@
             </div>
 
             <div class="space-y-20">
-                <!-- Project 1: ShopingApp -->
+                <!-- ShopingApp Project Card -->
                 <div class="bg-white dark:bg-[#1c1c1e] border border-gray-200 dark:border-[#38383a] rounded-3xl p-6 sm:p-10 shadow-lg">
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                        <div class="lg:col-span-6 space-y-6">
+                        <div class="lg:col-span-7 space-y-6">
                             <div class="flex items-center space-x-3">
                                 <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 text-xs font-semibold">Featured iOS App</span>
-                                <span class="text-xs text-gray-500"><i class="fa-brands fa-github mr-1"></i> ShopingApp Repository</span>
+                                <a href="https://github.com/Vijaygawai007/Vijaygawai007.github.io" target="_blank" class="text-xs text-gray-500 hover:text-blue-500"><i class="fa-brands fa-github mr-1"></i> GitHub Repository</a>
                             </div>
                             
                             <h3 class="text-2xl sm:text-3xl font-extrabold">ShopingApp E-Commerce Ecosystem</h3>
                             
                             <p class="text-gray-600 dark:text-gray-400 text-sm sm:text-base leading-relaxed">
-                                A high-performance native iOS e-commerce application crafted with precision. Features robust local persistence via SQLite, RESTful API integration using Alamofire, high-speed asynchronous image caching with Kingfisher, and tailored custom UICollectionViews for seamless product grids. Includes interactive cart quantity stepper controls and smooth checkout flows.
+                                A comprehensive, high-performance native iOS e-commerce application. Features robust SQLite local data persistence, RESTful API integration using Alamofire, high-speed asynchronous image caching with Kingfisher, custom UICollectionViews, secure onboarding flows, checkout processes, and user profile management.
                             </p>
 
-                            <!-- Tech Stack Badges -->
                             <div class="flex flex-wrap gap-2 pt-2">
                                 <span class="px-3 py-1 bg-gray-100 dark:bg-gray-900 text-xs rounded-xl font-medium border border-gray-200 dark:border-gray-800">Swift</span>
-                                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-900 text-xs rounded-xl font-medium border border-gray-200 dark:border-gray-800">UIKit / UICollectionView</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-900 text-xs rounded-xl font-medium border border-gray-200 dark:border-gray-800">UIKit / SwiftUI</span>
                                 <span class="px-3 py-1 bg-gray-100 dark:bg-gray-900 text-xs rounded-xl font-medium border border-gray-200 dark:border-gray-800">SQLite</span>
                                 <span class="px-3 py-1 bg-gray-100 dark:bg-gray-900 text-xs rounded-xl font-medium border border-gray-200 dark:border-gray-800">Alamofire</span>
                                 <span class="px-3 py-1 bg-gray-100 dark:bg-gray-900 text-xs rounded-xl font-medium border border-gray-200 dark:border-gray-800">Kingfisher</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-900 text-xs rounded-xl font-medium border border-gray-200 dark:border-gray-800">MVVM</span>
                             </div>
 
-                            <!-- Interactive Live Demo / Cart Stepper Preview Widget -->
-                            <div class="p-4 rounded-2xl bg-gray-50 dark:bg-[#252528] border border-gray-200 dark:border-gray-800">
-                                <div class="text-xs font-semibold text-gray-500 dark:text-gray-400 mb-2 uppercase tracking-wider">Interactive Cart Stepper Demo</div>
-                                <div class="flex items-center justify-between">
-                                    <div class="flex items-center space-x-3">
-                                        <div class="w-10 h-10 rounded-xl bg-blue-600/20 flex items-center justify-center text-blue-500 font-bold">
-                                            <i class="fa-solid fa-bag-shopping"></i>
-                                        </div>
-                                        <div>
-                                            <div class="font-semibold text-sm">Wireless Headphones Pro</div>
-                                            <div class="text-xs text-blue-500 font-medium">$149.00</div>
-                                        </div>
-                                    </div>
-                                    <div class="flex items-center space-x-3 bg-white dark:bg-[#1c1c1e] px-3 py-1.5 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm">
-                                        <button onclick="decrementQty()" class="w-6 h-6 rounded-lg bg-gray-100 dark:bg-gray-800 flex items-center justify-center hover:bg-gray-200 transition-colors text-xs font-bold">-</button>
-                                        <span id="qty-display" class="w-6 text-center font-bold text-sm">1</span>
-                                        <button onclick="incrementQty()" class="w-6 h-6 rounded-lg bg-gray-100 dark:bg-gray-800 flex items-center justify-center hover:bg-gray-200 transition-colors text-xs font-bold">+</button>
-                                    </div>
-                                </div>
+                            <div class="pt-4">
+                                <a href="#gallery" class="inline-flex items-center space-x-2 text-sm font-semibold text-blue-600 dark:text-blue-400 hover:underline">
+                                    <span>Explore all 12 app screenshots below</span>
+                                    <i class="fa-solid fa-arrow-down text-xs"></i>
+                                </a>
                             </div>
                         </div>
 
-                        <!-- Screenshot Showcase Grid -->
-                        <div class="lg:col-span-6 space-y-4">
-                            <div class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">App Screenshot Showcase (GitHub Assets)</div>
-                            <div class="grid grid-cols-2 gap-4">
-                                <div class="relative group overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-800 shadow-md bg-gray-100 dark:bg-gray-900 aspect-[9/16] flex items-center justify-center">
-                                    <img src="https://placehold.co/400x710/111827/3b82f6?text=ShopingApp+Home" alt="ShopingApp Home" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/400x710/1a1a1a/ffffff?text=ShopingApp'">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                                        <span class="text-xs text-white font-medium">Product Catalog Grid</span>
-                                    </div>
-                                </div>
-                                <div class="relative group overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-800 shadow-md bg-gray-100 dark:bg-gray-900 aspect-[9/16] flex items-center justify-center">
-                                    <img src="https://placehold.co/400x710/1f2937/60a5fa?text=ShopingApp+Cart" alt="ShopingApp Cart" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/400x710/1a1a1a/ffffff?text=Cart+View'">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                                        <span class="text-xs text-white font-medium">Cart & Stepper Flow</span>
-                                    </div>
+                        <!-- Preview Card Highlight -->
+                        <div class="lg:col-span-5">
+                            <div class="relative group overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-800 shadow-xl bg-gray-100 dark:bg-gray-900 aspect-[9/16] max-w-[280px] mx-auto flex items-center justify-center cursor-pointer" onclick="openLightbox('https://raw.githubusercontent.com/Vijaygawai007/Vijaygawai007.github.io/main/screen_shots/Home_Screen.png', 'ShopingApp - Home Screen')">
+                                <img src="https://raw.githubusercontent.com/Vijaygawai007/Vijaygawai007.github.io/main/screen_shots/Home_Screen.png" alt="ShopingApp Home" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/400x710/111827/3b82f6?text=ShopingApp+Home'">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                                    <span class="text-sm text-white font-semibold"><i class="fa-solid fa-expand mr-2"></i> Click to Zoom Home Screen</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 2: ConnectCall -->
+                <!-- ConnectCall Project Card -->
                 <div class="bg-white dark:bg-[#1c1c1e] border border-gray-200 dark:border-[#38383a] rounded-3xl p-6 sm:p-10 shadow-lg">
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                        <div class="lg:col-span-6 space-y-6">
+                        <div class="lg:col-span-7 space-y-6">
                             <div class="flex items-center space-x-3">
-                                <span class="px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 text-xs font-semibold">Cross-Platform / Real-time</span>
-                                <span class="text-xs text-gray-500"><i class="fa-brands fa-github mr-1"></i> ConnectCall Repository</span>
+                                <span class="px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 text-xs font-semibold">Real-Time Mobile App</span>
+                                <span class="text-xs text-gray-500"><i class="fa-brands fa-github mr-1"></i> Repository</span>
                             </div>
                             
-                            <h3 class="text-2xl sm:text-3xl font-extrabold">ConnectCall Real-time Calling App</h3>
+                            <h3 class="text-2xl sm:text-3xl font-extrabold">ConnectCall Real-Time Calling App</h3>
                             
                             <p class="text-gray-600 dark:text-gray-400 text-sm sm:text-base leading-relaxed">
-                                A high-availability 1-to-1 video and audio calling application built with Flutter and Supabase backend services. Features low-latency WebRTC streams, secure real-time authentication, push notifications, and crystal-clear audio-video quality synchronization across mobile platforms.
+                                A high-availability 1-to-1 video and audio calling application featuring low-latency WebRTC streams, secure real-time authentication, push notifications, and crystal-clear audio-video quality synchronization.
                             </p>
 
-                            <!-- Tech Stack Badges -->
                             <div class="flex flex-wrap gap-2 pt-2">
-                                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-900 text-xs rounded-xl font-medium border border-gray-200 dark:border-gray-800">Flutter / Dart</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-900 text-xs rounded-xl font-medium border border-gray-200 dark:border-gray-800">Flutter / Swift</span>
                                 <span class="px-3 py-1 bg-gray-100 dark:bg-gray-900 text-xs rounded-xl font-medium border border-gray-200 dark:border-gray-800">Supabase</span>
                                 <span class="px-3 py-1 bg-gray-100 dark:bg-gray-900 text-xs rounded-xl font-medium border border-gray-200 dark:border-gray-800">WebRTC</span>
-                                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-900 text-xs rounded-xl font-medium border border-gray-200 dark:border-gray-800">Real-time DB</span>
-                            </div>
-
-                            <div class="pt-2">
-                                <a href="https://github.com" target="_blank" class="inline-flex items-center space-x-2 text-sm font-semibold text-blue-600 dark:text-blue-400 hover:underline">
-                                    <span>Explore source code on GitHub</span>
-                                    <i class="fa-solid fa-arrow-right text-xs"></i>
-                                </a>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-900 text-xs rounded-xl font-medium border border-gray-200 dark:border-gray-800">Real-Time DB</span>
                             </div>
                         </div>
 
-                        <!-- Screenshot Showcase Grid -->
-                        <div class="lg:col-span-6 space-y-4">
-                            <div class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">App Screenshot Showcase (GitHub Assets)</div>
-                            <div class="grid grid-cols-2 gap-4">
-                                <div class="relative group overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-800 shadow-md bg-gray-100 dark:bg-gray-900 aspect-[9/16] flex items-center justify-center">
-                                    <img src="https://placehold.co/400x710/1e1b4b/818cf8?text=ConnectCall+UI" alt="ConnectCall Interface" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/400x710/1a1a1a/ffffff?text=ConnectCall+App'">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                                        <span class="text-xs text-white font-medium">Contact & Call UI</span>
-                                    </div>
-                                </div>
-                                <div class="relative group overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-800 shadow-md bg-gray-100 dark:bg-gray-900 aspect-[9/16] flex items-center justify-center">
-                                    <img src="https://placehold.co/400x710/311042/c084fc?text=Video+Stream" alt="Video Stream" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/400x710/1a1a1a/ffffff?text=Video+Call'">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                                        <span class="text-xs text-white font-medium">1-to-1 WebRTC Video</span>
-                                    </div>
+                        <div class="lg:col-span-5">
+                            <div class="relative group overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-800 shadow-xl bg-gray-100 dark:bg-gray-900 aspect-[9/16] max-w-[280px] mx-auto flex items-center justify-center">
+                                <img src="https://placehold.co/400x710/1e1b4b/818cf8?text=ConnectCall+App" alt="ConnectCall App" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-6">
+                                    <span class="text-sm text-white font-semibold">1-to-1 Video Stream Interface</span>
                                 </div>
                             </div>
                         </div>
@@ -333,82 +276,206 @@
             </div>
         </section>
 
-        <!-- Technical Skills Matrix Section -->
-        <section id="skills" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-gray-50/50 dark:bg-[#121214] rounded-3xl border border-gray-200/60 dark:border-[#222225] my-10">
+        <section id="gallery" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-gray-50/70 dark:bg-[#111113] rounded-3xl border border-gray-200/60 dark:border-[#222225] my-10">
+            <div class="text-center mb-16">
+                <span class="px-3.5 py-1.5 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 text-xs font-semibold uppercase tracking-wider mb-3 inline-block">Interactive Showcase</span>
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-3">ShopingApp Screen Gallery</h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-xl mx-auto">Click any screenshot below to inspect full-size in the interactive lightbox preview.</p>
+            </div>
+
+            <!-- Gallery Grid: 12 Screens -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+                
+                <!-- 1. Home Screen -->
+                <div class="group relative bg-white dark:bg-[#1c1c1e] p-3 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-xl transition-all cursor-pointer" onclick="openLightbox('https://raw.githubusercontent.com/Vijaygawai007/Vijaygawai007.github.io/main/screen_shots/Home_Screen.png', 'ShopingApp - Home Screen')">
+                    <div class="aspect-[9/16] rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-900 mb-3 relative">
+                        <img src="https://raw.githubusercontent.com/Vijaygawai007/Vijaygawai007.github.io/main/screen_shots/Home_Screen.png" alt="Home Screen" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://placehold.co/400x710/111827/3b82f6?text=Home_Screen'">
+                        <div class="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="px-3 py-1.5 rounded-xl bg-black/70 text-white text-xs font-medium backdrop-blur-md"><i class="fa-solid fa-expand mr-1"></i> Expand</span>
+                        </div>
+                    </div>
+                    <h4 class="font-semibold text-sm text-center truncate">Home Screen</h4>
+                </div>
+
+                <!-- 2. Detail Screen -->
+                <div class="group relative bg-white dark:bg-[#1c1c1e] p-3 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-xl transition-all cursor-pointer" onclick="openLightbox('https://raw.githubusercontent.com/Vijaygawai007/Vijaygawai007.github.io/main/screen_shots/Detail_Screen.png', 'ShopingApp - Detail Screen')">
+                    <div class="aspect-[9/16] rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-900 mb-3 relative">
+                        <img src="https://raw.githubusercontent.com/Vijaygawai007/Vijaygawai007.github.io/main/screen_shots/Detail_Screen.png" alt="Detail Screen" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://placehold.co/400x710/111827/3b82f6?text=Detail_Screen'">
+                        <div class="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="px-3 py-1.5 rounded-xl bg-black/70 text-white text-xs font-medium backdrop-blur-md"><i class="fa-solid fa-expand mr-1"></i> Expand</span>
+                        </div>
+                    </div>
+                    <h4 class="font-semibold text-sm text-center truncate">Detail Screen</h4>
+                </div>
+
+                <!-- 3. Cart Screen -->
+                <div class="group relative bg-white dark:bg-[#1c1c1e] p-3 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-xl transition-all cursor-pointer" onclick="openLightbox('https://raw.githubusercontent.com/Vijaygawai007/Vijaygawai007.github.io/main/screen_shots/Carts_Screen.png', 'ShopingApp - Cart Screen')">
+                    <div class="aspect-[9/16] rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-900 mb-3 relative">
+                        <img src="https://raw.githubusercontent.com/Vijaygawai007/Vijaygawai007.github.io/main/screen_shots/Carts_Screen.png" alt="Carts Screen" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://placehold.co/400x710/111827/3b82f6?text=Carts_Screen'">
+                        <div class="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="px-3 py-1.5 rounded-xl bg-black/70 text-white text-xs font-medium backdrop-blur-md"><i class="fa-solid fa-expand mr-1"></i> Expand</span>
+                        </div>
+                    </div>
+                    <h4 class="font-semibold text-sm text-center truncate">Carts Screen</h4>
+                </div>
+
+                <!-- 4. Payment Screen -->
+                <div class="group relative bg-white dark:bg-[#1c1c1e] p-3 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-xl transition-all cursor-pointer" onclick="openLightbox('https://raw.githubusercontent.com/Vijaygawai007/Vijaygawai007.github.io/main/screen_shots/payment_Screen.png', 'ShopingApp - Payment Screen')">
+                    <div class="aspect-[9/16] rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-900 mb-3 relative">
+                        <img src="https://raw.githubusercontent.com/Vijaygawai007/Vijaygawai007.github.io/main/screen_shots/payment_Screen.png" alt="Payment Screen" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://placehold.co/400x710/111827/3b82f6?text=payment_Screen'">
+                        <div class="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="px-3 py-1.5 rounded-xl bg-black/70 text-white text-xs font-medium backdrop-blur-md"><i class="fa-solid fa-expand mr-1"></i> Expand</span>
+                        </div>
+                    </div>
+                    <h4 class="font-semibold text-sm text-center truncate">Payment Screen</h4>
+                </div>
+
+                <!-- 5. Ordered Screen -->
+                <div class="group relative bg-white dark:bg-[#1c1c1e] p-3 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-xl transition-all cursor-pointer" onclick="openLightbox('https://raw.githubusercontent.com/Vijaygawai007/Vijaygawai007.github.io/main/screen_shots/Ordered_Screen.png', 'ShopingApp - Ordered Screen')">
+                    <div class="aspect-[9/16] rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-900 mb-3 relative">
+                        <img src="https://raw.githubusercontent.com/Vijaygawai007/Vijaygawai007.github.io/main/screen_shots/Ordered_Screen.png" alt="Ordered Screen" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://placehold.co/400x710/111827/3b82f6?text=Ordered_Screen'">
+                        <div class="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="px-3 py-1.5 rounded-xl bg-black/70 text-white text-xs font-medium backdrop-blur-md"><i class="fa-solid fa-expand mr-1"></i> Expand</span>
+                        </div>
+                    </div>
+                    <h4 class="font-semibold text-sm text-center truncate">Ordered Screen</h4>
+                </div>
+
+                <!-- 6. Login Screen -->
+                <div class="group relative bg-white dark:bg-[#1c1c1e] p-3 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-xl transition-all cursor-pointer" onclick="openLightbox('https://raw.githubusercontent.com/Vijaygawai007/Vijaygawai007.github.io/main/screen_shots/Login_screen.png', 'ShopingApp - Login Screen')">
+                    <div class="aspect-[9/16] rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-900 mb-3 relative">
+                        <img src="https://raw.githubusercontent.com/Vijaygawai007/Vijaygawai007.github.io/main/screen_shots/Login_screen.png" alt="Login Screen" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://placehold.co/400x710/111827/3b82f6?text=Login_screen'">
+                        <div class="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="px-3 py-1.5 rounded-xl bg-black/70 text-white text-xs font-medium backdrop-blur-md"><i class="fa-solid fa-expand mr-1"></i> Expand</span>
+                        </div>
+                    </div>
+                    <h4 class="font-semibold text-sm text-center truncate">Login Screen</h4>
+                </div>
+
+                <!-- 7. Signup Screen -->
+                <div class="group relative bg-white dark:bg-[#1c1c1e] p-3 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-xl transition-all cursor-pointer" onclick="openLightbox('https://raw.githubusercontent.com/Vijaygawai007/Vijaygawai007.github.io/main/screen_shots/Signup_screen.png', 'ShopingApp - Signup Screen')">
+                    <div class="aspect-[9/16] rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-900 mb-3 relative">
+                        <img src="https://raw.githubusercontent.com/Vijaygawai007/Vijaygawai007.github.io/main/screen_shots/Signup_screen.png" alt="Signup Screen" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://placehold.co/400x710/111827/3b82f6?text=Signup_screen'">
+                        <div class="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="px-3 py-1.5 rounded-xl bg-black/70 text-white text-xs font-medium backdrop-blur-md"><i class="fa-solid fa-expand mr-1"></i> Expand</span>
+                        </div>
+                    </div>
+                    <h4 class="font-semibold text-sm text-center truncate">Signup Screen</h4>
+                </div>
+
+                <!-- 8. Password Screen -->
+                <div class="group relative bg-white dark:bg-[#1c1c1e] p-3 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-xl transition-all cursor-pointer" onclick="openLightbox('https://raw.githubusercontent.com/Vijaygawai007/Vijaygawai007.github.io/main/screen_shots/Passward_screen.png', 'ShopingApp - Password Screen')">
+                    <div class="aspect-[9/16] rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-900 mb-3 relative">
+                        <img src="https://raw.githubusercontent.com/Vijaygawai007/Vijaygawai007.github.io/main/screen_shots/Passward_screen.png" alt="Password Screen" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://placehold.co/400x710/111827/3b82f6?text=Passward_screen'">
+                        <div class="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="px-3 py-1.5 rounded-xl bg-black/70 text-white text-xs font-medium backdrop-blur-md"><i class="fa-solid fa-expand mr-1"></i> Expand</span>
+                        </div>
+                    </div>
+                    <h4 class="font-semibold text-sm text-center truncate">Password Screen</h4>
+                </div>
+
+                <!-- 9. Profile Screen -->
+                <div class="group relative bg-white dark:bg-[#1c1c1e] p-3 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-xl transition-all cursor-pointer" onclick="openLightbox('https://raw.githubusercontent.com/Vijaygawai007/Vijaygawai007.github.io/main/screen_shots/Profile_Screen.png', 'ShopingApp - Profile Screen')">
+                    <div class="aspect-[9/16] rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-900 mb-3 relative">
+                        <img src="https://raw.githubusercontent.com/Vijaygawai007/Vijaygawai007.github.io/main/screen_shots/Profile_Screen.png" alt="Profile Screen" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://placehold.co/400x710/111827/3b82f6?text=Profile_Screen'">
+                        <div class="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="px-3 py-1.5 rounded-xl bg-black/70 text-white text-xs font-medium backdrop-blur-md"><i class="fa-solid fa-expand mr-1"></i> Expand</span>
+                        </div>
+                    </div>
+                    <h4 class="font-semibold text-sm text-center truncate">Profile Screen</h4>
+                </div>
+
+                <!-- 10. Onboarding 1 -->
+                <div class="group relative bg-white dark:bg-[#1c1c1e] p-3 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-xl transition-all cursor-pointer" onclick="openLightbox('https://raw.githubusercontent.com/Vijaygawai007/Vijaygawai007.github.io/main/screen_shots/Onboarding-1.png', 'ShopingApp - Onboarding 1')">
+                    <div class="aspect-[9/16] rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-900 mb-3 relative">
+                        <img src="https://raw.githubusercontent.com/Vijaygawai007/Vijaygawai007.github.io/main/screen_shots/Onboarding-1.png" alt="Onboarding 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://placehold.co/400x710/111827/3b82f6?text=Onboarding-1'">
+                        <div class="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="px-3 py-1.5 rounded-xl bg-black/70 text-white text-xs font-medium backdrop-blur-md"><i class="fa-solid fa-expand mr-1"></i> Expand</span>
+                        </div>
+                    </div>
+                    <h4 class="font-semibold text-sm text-center truncate">Onboarding 1</h4>
+                </div>
+
+                <!-- 11. Onboarding 2 -->
+                <div class="group relative bg-white dark:bg-[#1c1c1e] p-3 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-xl transition-all cursor-pointer" onclick="openLightbox('https://raw.githubusercontent.com/Vijaygawai007/Vijaygawai007.github.io/main/screen_shots/Onboarding_2.png', 'ShopingApp - Onboarding 2')">
+                    <div class="aspect-[9/16] rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-900 mb-3 relative">
+                        <img src="https://raw.githubusercontent.com/Vijaygawai007/Vijaygawai007.github.io/main/screen_shots/Onboarding_2.png" alt="Onboarding 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://placehold.co/400x710/111827/3b82f6?text=Onboarding_2'">
+                        <div class="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="px-3 py-1.5 rounded-xl bg-black/70 text-white text-xs font-medium backdrop-blur-md"><i class="fa-solid fa-expand mr-1"></i> Expand</span>
+                        </div>
+                    </div>
+                    <h4 class="font-semibold text-sm text-center truncate">Onboarding 2</h4>
+                </div>
+
+                <!-- 12. Onboarding 3 -->
+                <div class="group relative bg-white dark:bg-[#1c1c1e] p-3 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-xl transition-all cursor-pointer" onclick="openLightbox('https://raw.githubusercontent.com/Vijaygawai007/Vijaygawai007.github.io/main/screen_shots/Onbarding_3.png', 'ShopingApp - Onboarding 3')">
+                    <div class="aspect-[9/16] rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-900 mb-3 relative">
+                        <img src="https://raw.githubusercontent.com/Vijaygawai007/Vijaygawai007.github.io/main/screen_shots/Onbarding_3.png" alt="Onboarding 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://placehold.co/400x710/111827/3b82f6?text=Onbarding_3'">
+                        <div class="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="px-3 py-1.5 rounded-xl bg-black/70 text-white text-xs font-medium backdrop-blur-md"><i class="fa-solid fa-expand mr-1"></i> Expand</span>
+                        </div>
+                    </div>
+                    <h4 class="font-semibold text-sm text-center truncate">Onboarding 3</h4>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="skills" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
             <div class="text-center mb-16">
                 <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-3">Technical Skills Matrix</h2>
                 <p class="text-gray-600 dark:text-gray-400 max-w-xl mx-auto">Languages, frameworks, architecture patterns, and developer tools in my toolkit.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Languages -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="p-6 rounded-2xl bg-white dark:bg-[#1c1c1e] border border-gray-200 dark:border-[#38383a] shadow-sm">
                     <div class="flex items-center space-x-3 mb-4">
                         <div class="w-10 h-10 rounded-xl bg-orange-500/10 text-orange-500 flex items-center justify-center font-bold">
                             <i class="fa-solid fa-code"></i>
                         </div>
-                        <h3 class="font-bold text-lg">Languages</h3>
+                        <h3 class="font-bold text-lg">Languages & Core</h3>
                     </div>
                     <div class="flex flex-wrap gap-2">
                         <span class="px-3 py-1.5 rounded-xl bg-gray-100 dark:bg-gray-900 text-sm font-medium border border-gray-200 dark:border-gray-800">Swift 6</span>
-                        <span class="px-3 py-1.5 rounded-xl bg-gray-100 dark:bg-gray-900 text-sm font-medium border border-gray-200 dark:border-gray-800">Dart</span>
                         <span class="px-3 py-1.5 rounded-xl bg-gray-100 dark:bg-gray-900 text-sm font-medium border border-gray-200 dark:border-gray-800">Objective-C</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-gray-100 dark:bg-gray-900 text-sm font-medium border border-gray-200 dark:border-gray-800">Dart</span>
                     </div>
                 </div>
 
-                <!-- Frameworks -->
                 <div class="p-6 rounded-2xl bg-white dark:bg-[#1c1c1e] border border-gray-200 dark:border-[#38383a] shadow-sm">
                     <div class="flex items-center space-x-3 mb-4">
                         <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-500 flex items-center justify-center font-bold">
                             <i class="fa-solid fa-layer-group"></i>
                         </div>
-                        <h3 class="font-bold text-lg">Frameworks</h3>
+                        <h3 class="font-bold text-lg">Frameworks & Libraries</h3>
                     </div>
                     <div class="flex flex-wrap gap-2">
                         <span class="px-3 py-1.5 rounded-xl bg-gray-100 dark:bg-gray-900 text-sm font-medium border border-gray-200 dark:border-gray-800">SwiftUI</span>
                         <span class="px-3 py-1.5 rounded-xl bg-gray-100 dark:bg-gray-900 text-sm font-medium border border-gray-200 dark:border-gray-800">UIKit</span>
                         <span class="px-3 py-1.5 rounded-xl bg-gray-100 dark:bg-gray-900 text-sm font-medium border border-gray-200 dark:border-gray-800">Alamofire</span>
                         <span class="px-3 py-1.5 rounded-xl bg-gray-100 dark:bg-gray-900 text-sm font-medium border border-gray-200 dark:border-gray-800">Kingfisher</span>
-                        <span class="px-3 py-1.5 rounded-xl bg-gray-100 dark:bg-gray-900 text-sm font-medium border border-gray-200 dark:border-gray-800">Core Data / SQLite</span>
-                        <span class="px-3 py-1.5 rounded-xl bg-gray-100 dark:bg-gray-900 text-sm font-medium border border-gray-200 dark:border-gray-800">Supabase</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-gray-100 dark:bg-gray-900 text-sm font-medium border border-gray-200 dark:border-gray-800">SQLite</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-gray-100 dark:bg-gray-900 text-sm font-medium border border-gray-200 dark:border-gray-800">Core Data</span>
                     </div>
                 </div>
 
-                <!-- Architecture -->
                 <div class="p-6 rounded-2xl bg-white dark:bg-[#1c1c1e] border border-gray-200 dark:border-[#38383a] shadow-sm">
                     <div class="flex items-center space-x-3 mb-4">
                         <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-500 flex items-center justify-center font-bold">
                             <i class="fa-solid fa-sitemap"></i>
                         </div>
-                        <h3 class="font-bold text-lg">Architecture</h3>
+                        <h3 class="font-bold text-lg">Architecture & Tools</h3>
                     </div>
                     <div class="flex flex-wrap gap-2">
                         <span class="px-3 py-1.5 rounded-xl bg-gray-100 dark:bg-gray-900 text-sm font-medium border border-gray-200 dark:border-gray-800">MVVM</span>
                         <span class="px-3 py-1.5 rounded-xl bg-gray-100 dark:bg-gray-900 text-sm font-medium border border-gray-200 dark:border-gray-800">Clean Architecture</span>
-                        <span class="px-3 py-1.5 rounded-xl bg-gray-100 dark:bg-gray-900 text-sm font-medium border border-gray-200 dark:border-gray-800">VIPER</span>
-                        <span class="px-3 py-1.5 rounded-xl bg-gray-100 dark:bg-gray-900 text-sm font-medium border border-gray-200 dark:border-gray-800">Combine / Async/Await</span>
-                    </div>
-                </div>
-
-                <!-- Tools & Ecosystem -->
-                <div class="p-6 rounded-2xl bg-white dark:bg-[#1c1c1e] border border-gray-200 dark:border-[#38383a] shadow-sm">
-                    <div class="flex items-center space-x-3 mb-4">
-                        <div class="w-10 h-10 rounded-xl bg-green-500/10 text-green-500 flex items-center justify-center font-bold">
-                            <i class="fa-solid fa-screwdriver-wrench"></i>
-                        </div>
-                        <h3 class="font-bold text-lg">Tools & Ecosystem</h3>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1.5 rounded-xl bg-gray-100 dark:bg-gray-900 text-sm font-medium border border-gray-200 dark:border-gray-800">Xcode</span>
                         <span class="px-3 py-1.5 rounded-xl bg-gray-100 dark:bg-gray-900 text-sm font-medium border border-gray-200 dark:border-gray-800">Git / GitHub</span>
-                        <span class="px-3 py-1.5 rounded-xl bg-gray-100 dark:bg-gray-900 text-sm font-medium border border-gray-200 dark:border-gray-800">Swift Package Manager</span>
-                        <span class="px-3 py-1.5 rounded-xl bg-gray-100 dark:bg-gray-900 text-sm font-medium border border-gray-200 dark:border-gray-800">CocoaPods</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-gray-100 dark:bg-gray-900 text-sm font-medium border border-gray-200 dark:border-gray-800">Xcode</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact & Footer Section -->
         <section id="contact" class="py-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
             <div class="text-center mb-16">
                 <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-3">Let's Build Together</h2>
@@ -436,7 +503,6 @@
                     </button>
                 </form>
 
-                <!-- Success Message Modal / Notice -->
                 <div id="success-box" class="hidden mt-6 p-4 rounded-2xl bg-green-500/10 border border-green-500/20 text-green-600 dark:text-green-400 text-center text-sm font-medium">
                     Thank you! Your message has been sent successfully. Vijay will get back to you shortly.
                 </div>
@@ -444,7 +510,23 @@
         </section>
     </main>
 
-    <!-- Footer -->
+    <div id="lightbox-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-md p-4 sm:p-6" onclick="closeLightbox(event)">
+        <div class="relative max-w-md w-full bg-white dark:bg-[#1c1c1e] rounded-3xl overflow-hidden border border-gray-200 dark:border-gray-800 shadow-2xl flex flex-col max-h-[90vh]" onclick="event.stopPropagation()">
+            <div class="flex items-center justify-between px-6 py-4 border-b border-gray-200 dark:border-gray-800">
+                <h3 id="lightbox-title" class="font-bold text-base truncate">ShopingApp Screen</h3>
+                <button onclick="closeLightbox()" class="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-500 hover:text-white transition-colors">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="p-4 flex-1 overflow-y-auto flex items-center justify-center bg-gray-50 dark:bg-[#121214]">
+                <img id="lightbox-img" src="" alt="Expanded Preview" class="max-h-[70vh] object-contain rounded-xl shadow-lg">
+            </div>
+            <div class="px-6 py-4 border-t border-gray-200 dark:border-gray-800 text-center">
+                <span class="text-xs text-gray-500">Native iOS App Screen — Built by Vijay Gawai</span>
+            </div>
+        </div>
+    </div>
+
     <footer class="border-t border-gray-200 dark:border-gray-800 py-12 px-4 sm:px-6 lg:px-8 mt-20">
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
             <div class="flex items-center space-x-3">
@@ -455,7 +537,7 @@
             </div>
 
             <div class="flex items-center space-x-6 text-xl text-gray-600 dark:text-gray-400">
-                <a href="https://github.com" target="_blank" class="hover:text-blue-500 transition-colors" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://github.com/Vijaygawai007/Vijaygawai007.github.io" target="_blank" class="hover:text-blue-500 transition-colors" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
                 <a href="https://linkedin.com" target="_blank" class="hover:text-blue-500 transition-colors" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
                 <a href="mailto:vijay.gawai@example.com" class="hover:text-blue-500 transition-colors" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
             </div>
@@ -477,7 +559,6 @@
             }
         });
 
-        // Load saved theme or default to dark
         if (localStorage.getItem('theme') === 'light') {
             htmlElement.classList.remove('dark');
         } else {
@@ -499,20 +580,24 @@
             });
         });
 
-        // Cart Stepper Demo Logic for ShopingApp
-        let cartQty = 1;
-        const qtyDisplay = document.getElementById('qty-display');
-
-        function incrementQty() {
-            cartQty++;
-            qtyDisplay.textContent = cartQty;
+        // Lightbox Modal Functions
+        function openLightbox(imgSrc, title) {
+            const modal = document.getElementById('lightbox-modal');
+            const modalImg = document.getElementById('lightbox-img');
+            const modalTitle = document.getElementById('lightbox-title');
+            
+            modalImg.src = imgSrc;
+            modalTitle.textContent = title;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
         }
 
-        function decrementQty() {
-            if (cartQty > 1) {
-                cartQty--;
-                qtyDisplay.textContent = cartQty;
-            }
+        function closeLightbox(event) {
+            const modal = document.getElementById('lightbox-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = 'auto';
         }
 
         // Contact Form Submission Handler
